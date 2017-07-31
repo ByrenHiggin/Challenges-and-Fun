@@ -5,12 +5,9 @@ public static void main()
 	const int FizzModuloValue = 3;
 	const int BuzzModuloValue = 3;
 
-	FizzBuzzConfigClass fbcc = new FizzBuzzConfigClass("Fizz",FizzModuloValue, "Buzz", BuzzModuloValue)
-
-	for(int i = 1; i < 101; i++)
-	{
-		FizzBuzz(i, fbcc);
-	}
+	FizzBuzzConfigClass fbcc = new FizzBuzzConfigClass("Fizz",FizzModuloValue, "Buzz", BuzzModuloValue);
+	FizzBuzz(fbcc);
+	
 }
 
 public class FizzBuzzConfigClass()
@@ -29,12 +26,15 @@ public class FizzBuzzConfigClass()
 
 }
 
-public static void FizzBuzz(int number, FizzBuzzConfigClass Conf) {
-	string s = "";
-	s = StringComparisonByModulo(Conf.FirstModuloStringValue, Conf.FirstModuloValue, number)
-	s = StringComparisonByModulo(Conf.SecondModuloStringValue, Conf.SecondModuloValue, number)
-	s = (s = "") ? s : number.toString();
-	console.WriteLine("s");
+public static void FizzBuzz(FizzBuzzConfigClass Conf) {
+	for(int i = 1; i < 101; i++)
+	{
+		string s = "";
+		s = StringComparisonByModulo(Conf.FirstModuloStringValue, Conf.FirstModuloValue, i)
+		s = StringComparisonByModulo(Conf.SecondModuloStringValue, Conf.SecondModuloValue, i)
+		s = (s = "") ? s : i.toString();
+		console.WriteLine("s");
+	}
 }
 
 public static void StringComparisonByModulo(string output, int comparison, int test) {
